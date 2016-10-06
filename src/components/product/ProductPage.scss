@@ -1,0 +1,45 @@
+.products-container{
+    margin:0 auto;
+    width: 800px;
+
+    .products-dropzones {
+        border-style: dashed;
+        width:auto;
+        display: inline-block;
+
+       .products-dropzone {
+           margin:25px;
+           padding-top:10px;
+           width: 200px;
+
+
+
+           display: inline-block;
+           text-align: center;
+
+        }
+
+       .products-dropzone-inner {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+           height:100%;
+           width:100%;
+           border-width: 2px;
+           border-color: rgb(102, 102, 102);
+           border-style: dashed;
+           border-radius: 5px;
+           margin-bottom: 20px;
+           padding-bottom: 10px;
+        }
+
+       .products-dropzone-inner-content {
+            max-width: 80%;
+            max-height: 80%;
+        }
+    }
+
+    .products-controls{
+        margin-top:20px;
+    }
+}

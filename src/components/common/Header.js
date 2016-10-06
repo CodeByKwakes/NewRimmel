@@ -1,19 +1,28 @@
 import React, {PropTypes} from 'react';
 import { Link, IndexLink } from 'react-router';
-import LoadingDots from './LoadingDots';
+import './Header.scss';
+// import LoadingDots from './LoadingDots';
 
-const Header = ({loading}) => {
+import { Toolbar, ToolbarGroup, ToolbarTitle } from 'material-ui/Toolbar';
+import FlatButton from 'material-ui/FlatButton';
+
+
+const Header = () => {
   return (
-    <nav>
-      <IndexLink to="/" activeClassName="active">Home</IndexLink>
-      {" | "}
-      <Link to="/courses" activeClassName="active">Courses</Link>
-      {" | "}
-      <Link to="/about" activeClassName="active">About</Link>
-      {loading && <LoadingDots interval={100} dots={20}/>}
-    </nav>
+    <div>
+      <Toolbar>
+        <ToolbarGroup firstChild>
+          <ToolbarTitle text= 'Portal' className='header-title' />
+          <FlatButton label='Home' primary containerElement={<IndexLink to='/' />} />
+          <FlatButton label='Products' primary containerElement={<Link to='/products' />} />
+          <FlatButton label='Courses' primary containerElement={<Link to='/courses' />} />
+          <FlatButton label='About' primary containerElement={<Link to='/about' />} />
+        </ToolbarGroup>
+      </Toolbar>
+    </div>
   );
 };
+
 
 Header.propTypes = {
   loading: PropTypes.bool.isRequired
