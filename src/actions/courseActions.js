@@ -3,11 +3,11 @@ import * as types from './actionTypes';
 import CourseApi from '../api/mockCourseApi';
 import {beginAjaxCall, ajaxCallError} from './ajaxStatusActions';
 
-/*export function createCourse(course){
-  return { type: types.CREATE_COURSE, course};
-}*/
 export function loadCoursesSussess(courses){
-  return { type: types.LOAD_COURSES_SUCCESS, courses};
+  return {
+    type: types.LOAD_COURSES_SUCCESS,
+    courses
+  };
 }
 
 export function createCourseSuccess(course) {
@@ -18,11 +18,6 @@ export function updateCourseSuccess(course) {
   return {type: types.UPDATE_COURSE_SUCCESS, course};
 }
 
-
-/*Thunk*/
-// Functions below handle asynchronous calls.
-// Each returns a function that accepts a dispatch.
-// These are used by redux-thunk to support asynchronous interactions.
 export function loadCourses(){
   return function(dispatch){
     dispatch(beginAjaxCall());
