@@ -15,6 +15,7 @@ const Header = () => {
           <ToolbarTitle text= 'Portal' className='header-title' />
           <FlatButton label='Home' primary containerElement={<IndexLink to='/' />} />
           <FlatButton label='Products' primary containerElement={<Link to='/products' />} />
+          <FlatButton label='Photos' primary containerElement={<Link to='/photos' />} />
           <FlatButton label='Courses' primary containerElement={<Link to='/courses' />} />
           <FlatButton label='About' primary containerElement={<Link to='/about' />} />
         </ToolbarGroup>
