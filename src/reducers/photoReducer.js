@@ -5,7 +5,9 @@ import {sortingActions, sortMe} from '../actions/photoActions'
 // Action Handlers
 // ------------------------------------
 const ACTION_HANDLERS = {
-  [types.REQUEST_LOOKS]: function(state, action){ return Object.assign({}, state, { fetching: true }); },
+  [types.REQUEST_LOOKS]: function(state, action){
+    return Object.assign({}, state, { fetching: true });
+  },
   [types.SORT_LOOKS]: function(state, action){
     let c = state.feedUpdateCounter + 1;
     console.log(c);
