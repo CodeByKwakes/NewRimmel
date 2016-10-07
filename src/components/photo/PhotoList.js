@@ -21,20 +21,20 @@ const styles = {
 const PhotoList = ({photos}) => {
   return (
     <div style={styles.root}>
-    <Subheader>Photos</Subheader>
-    <GridList
-      cellHeight={200}
-      style={styles.gridList}
-    >
-{/*{photos.map(photo =>
+      <Subheader>Photos</Subheader>
+      <GridList
+        cellHeight={200}
+        style={styles.gridList}
+        >
+        {/*{photos.map(photo =>
         <PhotoTile key={photo.nid} photo={photo} />
       )}*/}
         <pre>
-    { JSON.stringify(photos, null, ' ') }
-  </pre>
+          { JSON.stringify(photos, null, ' ') }
+        </pre>
 
-    </GridList>
-  </div>
+      </GridList>
+    </div>
   );
 };
 
