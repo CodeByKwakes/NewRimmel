@@ -52,8 +52,38 @@ function selectedReddit(state = 'reactjs', action) {
       return state
   }
 }*/
+const initialState = {
+  isFetching: false,
+  didInvalidate: false,
+  items: []
+}
 
-function posts(state = {
+export default function redditReducer(state = initialState, action){
+
+  switch (action.type) {
+    case INVALIDATE_REDDIT:
+      return Object.assign({}, state, {
+        didInvalidate: true
+      })
+    case REQUEST_POSTS:
+      return Object.assign({}, state, {
+        isFetching: true,
+        didInvalidate: false
+      })
+    case RECEIVE_POSTS:
+      return Object.assign({}, state, {
+        isFetching: false,
+        didInvalidate: false,
+        items: action.posts,
+        lastUpdated: action.receivedAt
+      })
+    default:
+      return state
+  }
+}
+
+
+/*function posts(state = {
   isFetching: false,
   didInvalidate: false,
   items: []
@@ -79,7 +109,7 @@ function posts(state = {
       return state
   }
 }
-
+*/
 /*const postsByReddit = (state = { }, action) => {
   switch (action.type) {
     case INVALIDATE_REDDIT:
@@ -95,7 +125,7 @@ function posts(state = {
 }
 */
 
-function postsByReddit(state = {}, action) {
+/*function postsByReddit(state = {}, action) {
   switch (action.type) {
     case INVALIDATE_REDDIT:
     case RECEIVE_POSTS:
@@ -106,7 +136,7 @@ function postsByReddit(state = {}, action) {
     default:
       return state
   }
-}
+}*/
 
 /*export default function redditReducer(state = {}, action) {
   switch (action.type) {
@@ -121,9 +151,10 @@ function postsByReddit(state = {}, action) {
   }
 }
 */
-const redditReducer = combineReducers({
+/*const redditReducer = combineReducers({
   postsByReddit,
   selectedReddit
 })
 
 export default redditReducer
+*/

@@ -64,9 +64,9 @@ render() {
     const isEmpty = posts.length === 0
     return (
       <div>
-        <RedditPicker value={selectedReddit}
+        {/*<RedditPicker value={selectedReddit}
                 onChange={this.handleChange}
-                options={[ 'reactjs', 'frontend' ]} />
+                options={[ 'reactjs', 'frontend' ]} />*/}
         <p>
           {lastUpdated &&
             <span>
