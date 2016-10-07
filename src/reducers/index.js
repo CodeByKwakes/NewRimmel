@@ -8,8 +8,8 @@ import ajaxCallsInProgress from './ajaxStatusReducer';
 const rootReducer = combineReducers({
   courses,
   authors,
-/*  products,
-  photos,*/
+ /* products,*/
+  photos,
   ajaxCallsInProgress
 });
 

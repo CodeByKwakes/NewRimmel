@@ -7,18 +7,18 @@ import {browserHistory} from 'react-router';
 
 class PhotosPage extends React.Component {
   render() {
-    // const { photos } = this.props;
+    const { photos } = this.props;
     return (
       <div>
         <h1>Photos</h1>
-        {/*<PhotoList photos={photos} />*/}
+        <PhotoList photos={photos} />
       </div>
     );
   }
 }
 
 PhotosPage.propTypes = {
-  photos: PropTypes.array.isRequired,
+  photos: PropTypes.object.isRequired,
   actions: PropTypes.object.isRequired
 };
 

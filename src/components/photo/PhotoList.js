@@ -26,16 +26,20 @@ const PhotoList = ({photos}) => {
       cellHeight={200}
       style={styles.gridList}
     >
-      {photos.map(photo =>
-        <PhotoTile key={photo.uid} photo={photo} />
-      )}
+{/*{photos.map(photo =>
+        <PhotoTile key={photo.nid} photo={photo} />
+      )}*/}
+        <pre>
+    { JSON.stringify(photos, null, ' ') }
+  </pre>
+
     </GridList>
   </div>
   );
 };
 
 PhotoList.propTypes = {
-  photos: PropTypes.array.isRequired
+  photos: PropTypes.object.isRequired
 };
 
 export default PhotoList;
