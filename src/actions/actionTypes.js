@@ -42,3 +42,13 @@ var RIMMEL_CMS_LIVE = 'http://rimmelcms.holition.com/api/2/';
 var RIMMEL_CMS_LOCAL = 'http://10.0.10.7:3000/api/2/';//Tereza PC
 //var RIMMEL_CMS_LOCAL = 'http://10.0.10.10:3000';//Marcus PC
 export const RIMMEL_CMS = RIMMEL_CMS_STAGING;
+
+
+// ------------------------------------------
+// Reddit app
+// -----------------------------------------
+
+export const REQUEST_POSTS = 'REQUEST_POSTS'
+export const RECEIVE_POSTS = 'RECEIVE_POSTS'
+export const SELECT_REDDIT = 'SELECT_REDDIT'
+export const INVALIDATE_REDDIT = 'INVALIDATE_REDDIT'
