@@ -20,49 +20,50 @@ const initialState = {
 };
 
 export default function photoReducer(state = initialState, action) {
-  switch(action.type){
+  let c = state.feedUpdateCounter + 1;
+  let newState = Object.assign({}, state, {
+    feedUpdateCounter: c,
+    sorting: {
+      actions: sortingActions,
+      currentActionId: action.currentActionId,
+      orderAsc: state.orderAsc,
+    }
+  });
+
+  switch (action.type) {
     case types.REQUEST_LOOKS:
       return Object.assign({}, state, { fetching: true });
 
     case types.SORT_LOOKS:
-     let c = state.feedUpdateCounter + 1;
-    console.log(c);
-    let newState = Object.assign({}, state, {
-      feedUpdateCounter: c,
-      sorting: {
-      actions: sortingActions,
-      currentActionId: action.currentActionId,
-      orderAsc: state.orderAsc,
-    }});
-    newState.feed = sortMe(newState);
-    return newState;
+      console.log(c);
+      newState.feed = sortMe(newState);
+      return newState;
 
-    case  types.SORT_LOOKS_ORDER:
-    let b = state.feedUpdateCounter + 1;
-    console.log(b);
-    return Object.assign({}, state, { feedUpdateCounter: b })
+    case types.SORT_LOOKS_ORDER:
+      console.log(c);
+      return Object.assign({}, state, { feedUpdateCounter: c })
 
-  case types.CLEAR_LOOKS:
-    let a = state.feedUpdateCounter + 1;
-    console.log(a);
-    return Object.assign({}, state, { feed: [], feedUpdateCounter: a })
+    case types.CLEAR_LOOKS:
 
-  case types.RECEIVE_LOOKS:
-    let d = state.feedUpdateCounter + 1;
-    console.log(d);
-    let newerState = Object.assign({}, state, {
-      feed:  action.feed,
-      region: action.region,
-      fetching: false,
-      receivedAt: action.receivedAt,
-      feedUpdateCounter: c
-    });
-    newerState.feed = sortMe(newerState);
-    return newerState;
+      console.log(c);
+      return Object.assign({}, state, { feed: [], feedUpdateCounter: c })
+
+    case types.RECEIVE_LOOKS:
+
+      console.log(c);
+      let newState = Object.assign({}, state, {
+        feed: action.feed,
+        region: action.region,
+        fetching: false,
+        receivedAt: action.receivedAt,
+        feedUpdateCounter: c
+      });
+      newState.feed = sortMe(newState);
+      return newState;
 
     default:
       return state;
-}
+  }
 }
 
 /*const ACTION_HANDLERS = {

@@ -1,6 +1,6 @@
 export default {
   authors: [],
   courses: [],
-  photos: [],
+  // photos: [],
   ajaxCallsInProgress: 0
 };
