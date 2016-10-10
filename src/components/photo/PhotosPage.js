@@ -11,7 +11,7 @@ class PhotosPage extends React.Component {
     return (
       <div>
         <h1>Photos</h1>
-        <PhotoList photos={photos} />
+        <PhotoList photos={photos.feed} />
       </div>
     );
   }
