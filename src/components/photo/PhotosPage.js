@@ -26,10 +26,8 @@ const mapStateToProps = (state) => ({
   photos: state.photos
 });
 
-function mapDispatchToProps(dispatch) {
-  return {
-    actions: bindActionCreators(photoActions, dispatch),
-  };
-}
+const mapDispatchToProps =(dispatch) => ({
+  actions: bindActionCreators(photoActions, dispatch)
+})
 
 export default connect(mapStateToProps, mapDispatchToProps)(PhotosPage);

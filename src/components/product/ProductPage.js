@@ -7,15 +7,15 @@ import Products from './Products';
 import {browserHistory} from 'react-router';
 
 class ProductsPage extends React.Component {
-    render() {
-      const { products } = this.props;
-        return (
-            <div>
-                <h1>Products</h1>
-               {/*<Products products={products} />*/}
-            </div>
-        );
-    }
+  render() {
+    const { products } = this.props;
+    return (
+      <div>
+        <h1>Products</h1>
+        {/*<Products products={products} />*/}
+      </div>
+    );
+  }
 }
 
 ProductsPage.propTypes = {
